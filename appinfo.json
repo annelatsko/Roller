@@ -1,0 +1,51 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "anne.latsko@gmail.com",
+    "longName": "Menu Tutorial",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/roll.png",
+                "name": "IMAGE_ACTION_ICON_SELECT",
+                "type": "png"
+            },
+            {
+                "file": "images/d20image.png",
+                "name": "IMAGE_D20_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/d6.png",
+                "name": "IMAGE_D6_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/minus.png",
+                "name": "IMAGE_ACTION_ICON_MINUS",
+                "type": "png"
+            },
+            {
+                "file": "images/plus.png",
+                "name": "IMAGE_ACTION_ICON_PLUS",
+                "type": "png"
+            },
+            {
+                "file": "images/rbg2.png",
+                "name": "IMAGE_RBG_IDENTIFIER",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "2",
+    "shortName": "Menu Tutorial",
+    "uuid": "4c27db72-d88e-43a5-bc23-ccbda6debbdb",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
