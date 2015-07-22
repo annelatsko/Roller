@@ -3,14 +3,19 @@
     "capabilities": [
         ""
     ],
-    "companyName": "anne.latsko@gmail.com",
-    "longName": "Menu Tutorial",
+    "companyName": "lamaga",
+    "longName": "RPG Dice Roller",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/roll.png",
-                "name": "IMAGE_ACTION_ICON_SELECT",
+                "file": "images/menu_icon.png",
+                "name": "IMAGE_MENU_ICON_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/d12image.png",
+                "name": "IMAGE_D12_IDENTIFIER",
                 "type": "png"
             },
             {
@@ -19,8 +24,33 @@
                 "type": "png"
             },
             {
-                "file": "images/d6.png",
+                "file": "images/d10image.png",
+                "name": "IMAGE_D10_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/d4image.png",
+                "name": "IMAGE_D4_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/d8image.png",
+                "name": "IMAGE_D8_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/d6image.png",
                 "name": "IMAGE_D6_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/reroll.png",
+                "name": "IMAGE_REROLL_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/plus.png",
+                "name": "IMAGE_ACTION_ICON_PLUS",
                 "type": "png"
             },
             {
@@ -29,8 +59,8 @@
                 "type": "png"
             },
             {
-                "file": "images/plus.png",
-                "name": "IMAGE_ACTION_ICON_PLUS",
+                "file": "images/roll.png",
+                "name": "IMAGE_ACTION_ICON_SELECT",
                 "type": "png"
             },
             {
@@ -41,7 +71,7 @@
         ]
     },
     "sdkVersion": "2",
-    "shortName": "Menu Tutorial",
+    "shortName": "RPG Roller",
     "uuid": "4c27db72-d88e-43a5-bc23-ccbda6debbdb",
     "versionCode": 1,
     "versionLabel": "1.0",

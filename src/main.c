@@ -24,40 +24,21 @@ void draw_row_callback(GContext *ctx, Layer *cell_layer, MenuIndex *cell_index, 
      menu_cell_basic_draw(ctx, cell_layer, "4. d10", "Ten Sided Dice", NULL);
      break;
    case 4:
-     menu_cell_basic_draw(ctx, cell_layer, "5. d20", "Twenty Sided Dice", NULL);
+     menu_cell_basic_draw(ctx, cell_layer, "5. d12", "Twelve Sided Dice", NULL);
+     break;
+   case 5:
+     menu_cell_basic_draw(ctx, cell_layer, "6. d20", "Twenty Sided Dice", NULL);
      break;
  } 
 }
 uint16_t num_rows_callback(MenuLayer *menu_layer, uint16_t section_index, void *callback_context)
 {
   //basically useless  
-  return 5;
+  return 6;
 }
  
 
 void select_click_callback(struct MenuLayer *menu_layer, MenuIndex *cell_index, void *callback_context){
-  //this commented out block is to make it vibrate as a test
-  /*
-  //gets the row
-   int which = cell_index->row;
-  //sets the on-off times
-   uint32_t segments[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-  //Build the pattern (milliseconds on and off in alternating positions)
-    for(int i = 0; i < which + 1; i++)
-    {
-        segments[2 * i] = 200;
-        segments[(2 * i) + 1] = 100;
-    }
- 
-    //Create a VibePattern data structure
-    VibePattern pattern = {
-        .durations = segments,
-        .num_segments = 16
-    };
- 
-    //Do the vibration pattern!
-    vibes_enqueue_custom_pattern(pattern);
-    */
   showDetail(cell_index);
 }
 

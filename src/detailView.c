@@ -8,30 +8,32 @@ static TextLayer *dice_layer, *header_layer;
 static BitmapLayer *dimage_layer;
 static GBitmap *dimage_bitmap, *s_icon_plus, *s_icon_minus, *s_icon_select;
 static ActionBarLayer *daction_bar;
+void showResult(MenuIndex *index, int dice); //see displayView.c
 
 static uint32_t IMAGE_RESOURCES[] = {
-  RESOURCE_ID_IMAGE_RBG_IDENTIFIER,
-  RESOURCE_ID_IMAGE_D6_IDENTIFIER,
-  RESOURCE_ID_IMAGE_RBG_IDENTIFIER,
-  RESOURCE_ID_IMAGE_RBG_IDENTIFIER,
-  RESOURCE_ID_IMAGE_D20_IDENTIFIER,
+  RESOURCE_ID_IMAGE_D4_IDENTIFIER,    //d4
+  RESOURCE_ID_IMAGE_D6_IDENTIFIER,     //d6
+  RESOURCE_ID_IMAGE_D8_IDENTIFIER,    //d8
+  RESOURCE_ID_IMAGE_D10_IDENTIFIER,   //d10
+  RESOURCE_ID_IMAGE_D12_IDENTIFIER,    //d12
+  RESOURCE_ID_IMAGE_D20_IDENTIFIER,    //d20
 };
 
 //the dice options available in the order that corresponds to their menuindex
-static uint32_t DICE_RESOURCES[] = {4, 6, 8, 10, 20};
+
 
 int dice = NUM_DICE_DEFAULT;
 MenuIndex *dice_index;
 
 static void update_text(){
   static char dice_text[10];
-  snprintf(dice_text, sizeof(dice_text), "%u", dice);
+  snprintf(dice_text, sizeof(dice_text), "%u", dice); 
   text_layer_set_text(dice_layer, dice_text);
 }
 
 
 static void increment_click_handler(ClickRecognizerRef recognizer, void *context) {
-  if(dice == 10){
+  if(dice == 12){
     return;
   }
   else{
@@ -42,7 +44,7 @@ static void increment_click_handler(ClickRecognizerRef recognizer, void *context
 
 static void decrement_click_handler(ClickRecognizerRef recognizer, void *context) {
   if (dice == 1) {
-    // Keep the counter at onee
+    // Keep the counter at one
     return;
   }
   else{
@@ -52,7 +54,7 @@ static void decrement_click_handler(ClickRecognizerRef recognizer, void *context
 }
 
 static void select_click_handler(ClickRecognizerRef recognizer, void *context){
-  
+  showResult(dice_index, dice);
 }
 
 void click_config_provider(void *context){
@@ -62,7 +64,7 @@ void click_config_provider(void *context){
 }
 
 void detailLoad(){
-  
+  //i just needed to have this; it doesn't do anything and that seems to be ok.
 }
 
 void detailUnload(Window *win){
@@ -111,19 +113,19 @@ void showDetail(MenuIndex* index){
   
   //creates the appropriate image depending on what was clicked
   dimage_bitmap = gbitmap_create_with_resource(IMAGE_RESOURCES[index->row]);
-  dimage_layer = bitmap_layer_create(GRect(0, 0, 70, 70)); //puts it in the top left corner
+  dimage_layer = bitmap_layer_create(GRect(0, 0, 124, 125)); //puts it in the top left corner
   bitmap_layer_set_bitmap(dimage_layer, dimage_bitmap);
   layer_add_child(window_get_root_layer(dwindow), bitmap_layer_get_layer(dimage_layer));
   
   //sets the text dice_header
-  header_layer = text_layer_create(GRect(40, 70, 55, 55));
+  header_layer = text_layer_create(GRect(3, 132, 150, 55));
   text_layer_set_font(header_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
   text_layer_set_background_color(header_layer, GColorClear);
-  text_layer_set_text(header_layer, "Number of Dice");
+  text_layer_set_text(header_layer, "Number of Dice:");
   layer_add_child(window_layer, text_layer_get_layer(header_layer));
   
   //sets the text dice_text
-  dice_layer = text_layer_create(GRect(100, 60, 150, 150));
+  dice_layer = text_layer_create(GRect(102, 120, 150, 150));
   text_layer_set_font(dice_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_background_color(dice_layer, GColorClear);
   layer_add_child(window_layer, text_layer_get_layer(dice_layer));
