@@ -9,6 +9,16 @@
     "resources": {
         "media": [
             {
+                "file": "images/arrow.png",
+                "name": "IMAGE_ARROW_IDENTIFIER",
+                "type": "png"
+            },
+            {
+                "file": "images/reroll.png",
+                "name": "IMAGE_REROLL_IDENTIFIER",
+                "type": "png"
+            },
+            {
                 "file": "images/menu_icon.png",
                 "name": "IMAGE_MENU_ICON_IDENTIFIER",
                 "type": "png"
@@ -44,11 +54,6 @@
                 "type": "png"
             },
             {
-                "file": "images/reroll.png",
-                "name": "IMAGE_REROLL_IDENTIFIER",
-                "type": "png"
-            },
-            {
                 "file": "images/plus.png",
                 "name": "IMAGE_ACTION_ICON_PLUS",
                 "type": "png"
@@ -74,7 +79,7 @@
     "shortName": "RPG Roller",
     "uuid": "4c27db72-d88e-43a5-bc23-ccbda6debbdb",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": false
     }

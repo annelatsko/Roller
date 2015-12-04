@@ -4,7 +4,6 @@ Window* window;
 MenuLayer *mainMenu;
 void showDetail(MenuIndex* index); //see detailView.c
 
-
 //draws the menu itself
 void draw_row_callback(GContext *ctx, Layer *cell_layer, MenuIndex *cell_index, void *callback_context)
 {
@@ -81,6 +80,7 @@ static void deinit()
 int main(void)
 {
     init();
+    srand(time(NULL));
     app_event_loop();
     deinit();
 }
